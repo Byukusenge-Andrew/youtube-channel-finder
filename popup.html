@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Channel Finder</title>
+  <style>
+    body { width: 300px; padding: 10px; }
+    .channel { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+    .channel img { width: 50px; height: 50px; border-radius: 50%; }
+    .stats {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #606060;
+  }
+  
+  .channel-info {
+    flex: 1;
+  }
+  
+  .channel-info h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #0f0f0f;
+  }
+  
+  .error {
+    padding: 12px;
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .error-icon {
+    background-color: #ef4444;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .error-message {
+    color: #991b1b;
+    font-size: 14px;
+  }
+
+ 
+
+  
+  .error p {
+    margin: 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .error p::before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #c81e1e;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #065fd4;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  </style>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Enter channel name">
+  <button id="searchButton">Search</button>
+  <div id="results"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
