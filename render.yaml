@@ -2,7 +2,7 @@ services:
   - type: web
     name: youtube-channel-finder
     env: ruby
-    buildCommand: bundle install
+    buildCommand: bundle install --without development
     startCommand: bundle exec ruby app.rb -p $PORT
     envVars:
       - key: YOUTUBE_API_KEY
