@@ -11,6 +11,12 @@ else
   # YOUTUBE_API_KEY should be set as an environment variable
 end
 
+configure do
+  set :bind, '0.0.0.0'
+  set :port, ENV['PORT'] || 4567
+  enable :logging
+end
+
 # Allow CORS from Edge extension
 before do
   headers 'Access-Control-Allow-Origin' => '*'

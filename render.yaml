@@ -3,12 +3,15 @@ services:
     name: youtube-channel-finder
     env: ruby
     buildCommand: bundle install --without development
-    startCommand: bundle exec ruby app.rb -p $PORT
+    startCommand: bundle exec rackup -p $PORT
     envVars:
       - key: YOUTUBE_API_KEY
         sync: false
+      - key: PORT
+        value: 10000
     buildFilter:
       paths:
       - app.rb
       - Gemfile
       - Gemfile.lock
+      - config.ru
