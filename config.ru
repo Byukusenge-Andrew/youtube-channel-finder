@@ -1,6 +1,6 @@
 require './app'
 
-port = 4567
+port = ENV['PORT'] || 3000
 puts "Starting server on port #{port}"
 
 run Sinatra::Application
