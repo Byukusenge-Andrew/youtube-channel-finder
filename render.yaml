@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: youtube-channel-finder
+    env: ruby
+    buildCommand: bundle install
+    startCommand: bundle exec ruby app.rb -p $PORT
+    envVars:
+      - key: YOUTUBE_API_KEY
+        sync: false
+    buildFilter:
+      paths:
+      - app.rb
+      - Gemfile
+      - Gemfile.lock
