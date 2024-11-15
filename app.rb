@@ -1,10 +1,13 @@
 require 'sinatra'
+
+set :bind, '0.0.0.0'
+set :port,  4567
+
 require 'rest-client'
 require 'json'
 require 'dotenv'
 
-set :bind, '0.0.0.0'
-set :port, ENV['PORT'] || 4567
+
 enable :logging
 
 # Load environment variables
