@@ -1,7 +1,7 @@
 require 'sinatra'
 
 set :bind, '0.0.0.0'
-set :port,  4567
+set :port, ENV['PORT'] || 4567
 
 require 'rest-client'
 require 'json'
